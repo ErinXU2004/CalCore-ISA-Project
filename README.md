@@ -1,6 +1,6 @@
 # CalCore-ISA 🍱⚙️
 
-**CalCore-ISA** is a domain-specific instruction set architecture (ISA) for compiling lifestyle goals, especially for weight loss—into structured, programmable behavior scripts.
+**CalCore-ISA** is a domain-specific instruction set architecture (ISA) for compiling lifestyle goals, especially for weight loss, into structured, programmable behavior scripts.
 
 Instead of manually logging every meal or workout, CalCore lets users write high-level goals in a readable DSL (domain-specific language) and then simulates how daily behaviors affect calorie balance and health outcomes.
 
@@ -10,15 +10,7 @@ Designed by **Erin Xu**, a computer engineer and dancer who believes life should
 
 ## 🧠 What is CalCore DSL?
 
-CalCore defines a lightweight instruction set to describe actions such as eating, exercising, checking progress, and setting goals.
-
-### ✍️ Sample `.cal` Script
-```cal
-SETGOAL DEFICIT, 500
-EAT 300, PROTEIN
-MOVE DANCE, 40
-QUERY DEFICIT
-EAT 200, LIGHT
+CalCore defines a customized instruction set to describe actions such as eating, exercising, checking progress, and setting goals.
 
 CalCore-ISA/
 ├── README.md
@@ -48,6 +40,16 @@ CalCore is built for:
 Erin Xu
 EECS @ University of Michigan
 📮 erinhua@umich.edu
+
+### ✍️ Sample `.cal` Script
+```cal
+SETGOAL DEFICIT, 500
+EAT 300, PROTEIN
+MOVE DANCE, 40
+QUERY DEFICIT
+EAT 200, LIGHT
+
+
 
 
 
