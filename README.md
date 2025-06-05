@@ -12,14 +12,6 @@ Designed by **Erin Xu**, a computer engineer and dancer who believes life should
 
 CalCore defines a customized instruction set to describe actions such as eating, exercising, checking progress, and setting goals.
 
-CalCore-ISA/
-├── README.md
-├── dsl/                 # DSL documentation
-├── examples/            # Sample .cal scripts
-├── output/              # Interpreter outputs
-├── interpreter/         # Python logic (coming soon)
-└── architecture/        # Diagrams, pipeline, etc.
-
 🌱 Coming Soon
 Python-based interpreter
 Visual feedback module
