@@ -53,8 +53,8 @@ All arguments are positional. Optional arguments may depend on the instruction t
 
 ## 5. 📄 Sample CalCore Script (`.cal` file)
 
-<pre>sample_day.cal
-SETGOAL DEFICIT, 400
+sample_day.cal
+<pre>SETGOAL DEFICIT, 400
 EAT 300, CARB
 MOVE DANCE, 45
 QUERY DEFICIT
@@ -68,14 +68,14 @@ MOOD STRESS, LOW</pre>
 ---
 
 ## 6. 🖥️ Sample Output (from interpreter)
-```[08:00] EAT: +300 kcal (CARB)
+<pre>[08:00] EAT: +300 kcal (CARB)
 [09:00] MOVE: -200 kcal (DANCE 45min)
 [10:00] QUERY: Current deficit = -100 kcal
 [12:30] EAT: +500 kcal (BALANCED)
 [14:00] MOVE: -70 kcal (WALK 20min)
 [17:00] REWARD: +150 kcal (CHOCOLATE)
 [20:00] QUERY: Current deficit = -420 kcal
-[21:00] MOOD: STRESS level set to LOW```
+[21:00] MOOD: STRESS level set to LOW</pre>
 
 
 ---
