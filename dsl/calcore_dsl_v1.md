@@ -53,7 +53,7 @@ All arguments are positional. Optional arguments may depend on the instruction t
 
 ## 5. 📄 Sample CalCore Script (`.cal` file)
 
-```sample_day.cal
+<pre>sample_day.cal
 SETGOAL DEFICIT, 400
 EAT 300, CARB
 MOVE DANCE, 45
@@ -62,7 +62,7 @@ EAT 500, BALANCED
 MOVE WALK, 20
 REWARD CHOCOLATE, 150
 QUERY DEFICIT
-MOOD STRESS, LOW```
+MOOD STRESS, LOW</pre>
 
 
 ---
