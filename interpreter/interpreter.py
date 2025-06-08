@@ -72,3 +72,13 @@ def run_calcore_script(file_path):
 if __name__ == "__main__":
     run_calcore_script("examples/sample_day.cal")
 
+def print_log(self, to_file=None):
+    if to_file:
+        with open(to_file, 'w') as f:
+            for line in self.log:
+                f.write(line + '\n')
+    else:
+        for line in self.log:
+            print(line)
+
+
