@@ -1,0 +1,20 @@
+User Profile: {
+  'Name': 'Erin',
+  'Height(cm)': 165,
+  'Weight(kg)': 53,
+  'Body Fat %': 22,
+  'BMR(kcal/day)': 1213.62
+}
+
+EAT: +320 kcal (CARB)
+EAT: +120 kcal (PROTEIN)
+EAT: +280 kcal (PROTEIN)
+EAT: +160 kcal (FAT)
+MOVE: -161.92 kcal (DANCE 40 min)
+EAT: +260 kcal (CARB)
+EAT: +200 kcal (PROTEIN)
+MOVE: -77.16 kcal (WALK 30 min)
+
+QUERY: Current deficit = -159.08 kcal
+
+QUERY: BMR = 1213.62 kcal/day
