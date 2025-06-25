@@ -1,6 +1,6 @@
-# CalCore-ISA: AI-Powered Custom Instruction Set for Fat Loss
+# CalCore: AI-Powered Custom Instruction Set for Fat Loss
 
-Welcome to **CalCore-ISA**, an experimental platform that reimagines how we interact with fat-loss tracking systems by combining custom ISA (Instruction Set Architecture) design with AI-driven input interpretation.
+Welcome to **CalCore**, an experimental platform that reimagines how we interact with fat-loss tracking systems by combining custom ISA (Instruction Set Architecture) design with AI-driven input interpretation.
 
 This is not just a calculator—it's the foundation of an intelligent, extensible, user-friendly metabolic tracking engine designed for daily use.
 
@@ -76,7 +76,6 @@ This will be achieved through LLM-powered input parsing and DSL code generation.
 👩‍💻 Author
 Erin Xu
 University of Michigan – ECE Major
-🌱 A project for Ross Impact Studio and Berkeley M.Eng Application
 🔗 GitHub: ErinXU2004
 
 
