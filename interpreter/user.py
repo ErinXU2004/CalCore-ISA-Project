@@ -1,13 +1,14 @@
 # interpreter/user.py
+import json
 
 class CalCoreUser:
-    def __init__(self, name, age, gender, height_cm, weight_kg, body_fat_pct):
+    def __init__(self, name, age, gender, height_cm, weight_kg, body_fat):
         self.name = name
         self.age = age
         self.gender = gender
         self.height_cm = height_cm
         self.weight_kg = weight_kg
-        self.body_fat_pct = body_fat_pct
+        self.body_fat = body_fat
         self.bmr = self.calculate_bmr()
 
     def calculate_bmr(self):
@@ -56,12 +57,13 @@ class CalCoreUser:
             "Gender": self.gender,
             "Height(cm)": self.height_cm,
             "Weight(kg)": self.weight_kg,
-            "Body Fat %": self.body_fat_pct,
+            "Body Fat %": self.body_fat,
             "BMR(kcal/day)": self.bmr
         }
 
-    def load_user_from_json(path):
-        with open(path, 'r') as f:
-            data = json.load(f)
-        return CalCoreUser(**data)
+def load_user_from_json(path):
+    with open(path, 'r') as f:
+        data = json.load(f)
+    return CalCoreUser(**data)
+
 
