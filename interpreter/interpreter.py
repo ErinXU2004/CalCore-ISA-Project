@@ -1,84 +1,66 @@
-# interpreter/interpreter.py
-
-from user import CalCoreUser
+from user import load_user_from_json
+import os
 
 class CalCoreState:
-    def __init__(self, user: CalCoreUser):
+    def __init__(self, user):
         self.user = user
-        self.CaloriesIn = 0
-        self.CaloriesOut = 0
+        self.calories_in = 0
+        self.calories_out = 0
         self.log = []
-        self.log.append(f"User Profile: {user.summary()}")
 
-    def eat(self, calories, meal_type):
-        self.CaloriesIn += calories
-        self.log.append(f"EAT: +{calories} kcal ({meal_type})")
+    def eat(self, amount, category):
+        self.calories_in += amount
+        self.log.append(f"EAT: +{amount} kcal ({category})")
 
     def move(self, activity, duration_min):
-        calories_burned = self.user.calories_burned(activity, duration_min)
-        self.CaloriesOut += calories_burned
-        self.log.append(f"MOVE: -{calories_burned} kcal ({activity} {duration_min} min)")
+        # 简化估算：热量消耗 = BMR * MET系数 * 时间 / 1440
+        MET = {"WALK": 3.5, "RUN": 7.0, "DANCE": 5.5}.get(activity.upper(), 3.5)
+        kcal = round(self.user.bmr * MET * duration_min / 1440, 2)
+        self.calories_out += kcal
+        self.log.append(f"MOVE: -{kcal} kcal ({activity} {duration_min} min)")
 
     def query_deficit(self):
-        deficit = self.CaloriesOut - self.CaloriesIn
-        self.log.append(f"QUERY: Current deficit = {deficit} kcal")
-        return deficit
+        deficit = self.calories_in - self.calories_out
+        self.log.append(f"QUERY: Current deficit = {deficit:+.2f} kcal")
 
     def query_bmr(self):
-        bmr = self.user.bmr()
-        self.log.append(f"QUERY: BMR = {bmr} kcal/day")
-        return bmr
+        explanation = self.user.explain_bmr_calculation()
+        self.log.append("QUERY: BMR Calculation Requested")
+        self.log.append(explanation)
 
     def print_log(self):
-        for line in self.log:
-            print(line)
+        os.makedirs("output", exist_ok=True)
+        with open("output/sample_output.txt", "w") as f:
+            f.write("User Profile: " + str(self.user.to_dict()) + "\n\n")
+            for entry in self.log:
+                f.write(entry + "\n")
 
-def parse_instruction(line, state):
-    parts = line.strip().split()
-    if not parts or parts[0].startswith('#'):
-        return  # 注释或空行
-
-    instr = parts[0].upper()
-    args = ' '.join(parts[1:]).split(',')
-
-    if instr == "EAT":
-        calories = int(args[0])
-        meal_type = args[1].strip()
-        state.eat(calories, meal_type)
-
-    elif instr == "MOVE":
-        activity = args[0].strip()
-        duration = int(args[1])
-        state.move(activity, duration)
-
-    elif instr == "QUERY":
-        what = args[0].strip().upper()
-        if what == "DEFICIT":
-            state.query_deficit()
-        elif what == "BMR":
-            state.query_bmr()
-
-def run_calcore_script(file_path):
-    user = CalCoreUser(
-        name="Erin", age=21, gender="F",
-        height_cm=165, weight_kg=53, body_fat_pct=22
-    )
-    state = CalCoreState(user)
-    with open(file_path, 'r') as f:
-        for line in f:
-            parse_instruction(line, state)
-    state.print_log()
 
 if __name__ == "__main__":
-    run_calcore_script("examples/sample_day.cal")
+    user = load_user_from_json("user_profiles/erin.json")
+    state = CalCoreState(user)
 
-def print_log(self, to_file=None):
-    if to_file:
-        with open(to_file, 'w') as f:
-            for line in self.log:
-                f.write(line + '\n')
-    else:
-        for line in self.log:
-            print(line)
+    with open("examples/sample_day.cal", "r") as f:
+        lines = f.readlines()
 
+    for line in lines:
+        tokens = line.strip().split()
+        if not tokens:
+            continue
+        cmd = tokens[0].upper()
 
+        if cmd == "EAT":
+            amount = int(tokens[1])
+            category = tokens[2]
+            state.eat(amount, category)
+        elif cmd == "MOVE":
+            activity = tokens[1]
+            duration = int(tokens[2])
+            state.move(activity, duration)
+        elif cmd == "QUERY":
+            if tokens[1].upper() == "DEFICIT":
+                state.query_deficit()
+            elif tokens[1].upper() == "BMR":
+                state.query_bmr()
+
+    state.print_log()
