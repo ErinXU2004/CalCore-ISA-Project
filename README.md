@@ -45,7 +45,7 @@ Eventually, every user will have access to:
 
 Example CalCore DSL (`.cal`) input file:
 
-```cal
+```
 LOG_WEIGHT 2025-06-25 51.7
 EAT 300 carb
 EAT 500 protein
