@@ -45,17 +45,19 @@ Eventually, every user will have access to:
 
 Example CalCore DSL (`.cal`) input file:
 
-```
+```cal
 LOG_WEIGHT 2025-06-25 51.7
 EAT 300 carb
 EAT 500 protein
 MOVE DANCE 120
 QUERY BMR
-QUERY DEFICIT```
-
+QUERY DEFICIT
+```
 
 Run the interpreter:
-```python interpreter/interpreter.py examples/sample_day.cal```
+```
+python interpreter/interpreter.py examples/sample_day.cal
+```
 
 📈 Plotting Weight Trends
 Generate weight curve graph from JSON log:
