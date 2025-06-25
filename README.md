@@ -1,45 +1,83 @@
-# CalCore-ISA 🍱⚙️
+# CalCore-ISA: AI-Powered Custom Instruction Set for Fat Loss
 
-**CalCore-ISA** is a domain-specific instruction set architecture (ISA) for compiling lifestyle goals, especially for weight loss, into structured, programmable behavior scripts.
+Welcome to **CalCore-ISA**, an experimental platform that reimagines how we interact with fat-loss tracking systems by combining custom ISA (Instruction Set Architecture) design with AI-driven input interpretation.
 
-Instead of manually logging every meal or workout, CalCore lets users write high-level goals in a readable DSL (domain-specific language) and then simulates how daily behaviors affect calorie balance and health outcomes.
-
-Designed by **Erin Xu**, a computer engineer and dancer who believes life should be structured *and* delicious.
+This is not just a calculator—it's the foundation of an intelligent, extensible, user-friendly metabolic tracking engine designed for daily use.
 
 ---
 
-## 🧠 What is CalCore DSL?
+## 💡 Project Vision
 
-CalCore defines a customized instruction set to describe actions such as eating, exercising, checking progress, and setting goals.
+Most fat-loss apps require painful manual logging of food and exercise. CalCore's vision is to **eliminate manual input entirely** by enabling users to simply say:
 
-🌱 Coming Soon
-Python-based interpreter
-Visual feedback module
-“Mood-based planning” templates
-Integration with mobile input
-Business model canvas for health product pitch
+> “I weigh 51kg today. I had 3 buns for breakfast, a bowl of noodles for dinner, and danced for 3 hours.”
+1. 🔍 **Automatically interpret the input** using an AI language model
+2. ⚙️ **Translate it into CalCore DSL commands**
+3. 🧮 **Execute the commands via interpreter**
+4. 📊 **Generate a personalized metabolic report**, including:
+   - Daily calorie intake
+   - Calorie consumption from activities
+   - Net deficit or surplus
+   - Visual summary (charts, logs, trends)
 
-✨ Vision
-A programmable lifestyle system for goal-driven people who want to manage their health without micromanaging their life.
+Eventually, every user will have access to:
+- 📆 A per-day auto-generated metabolic summary
+- 📈 Long-term weight tracking and curve plotting
+- 🧠 AI-driven natural language interaction — no manual tracking needed
 
-CalCore is built for:
+---
 
-👩‍💻 People who love logic but hate calorie apps
-🧘‍♀️ Those seeking structure without stress
-🔬 Engineers, students, and researchers interested in ISA, DSLs, and behavior modeling
+## 🔧 Features (In Progress)
 
-📬 Author
-Erin Xu
-EECS @ University of Michigan
-📮 erinhua@umich.edu
+- [x] DSL-based calorie and movement command parser
+- [x] Support for per-user profile (height, weight, age, body fat %)
+- [x] BMR/RMR calculation using Harris-Benedict equation
+- [x] Calorie tracking (intake + consumption)
+- [x] Weight history logging with duplicate filtering
+- [x] Weight trend visualization with `matplotlib`
+- [ ] Natural language to DSL parser using LLM
+- [ ] Auto-generated daily metabolic report
+- [ ] Web or mobile front-end
 
-### ✍️ Sample `.cal` Script
+---
+
+## 🚀 Sample Usage
+
+Example CalCore DSL (`.cal`) input file:
+
 ```cal
-SETGOAL DEFICIT, 500
-EAT 300, PROTEIN
-MOVE DANCE, 40
+LOG_WEIGHT 2025-06-25 51.7
+EAT 300 carb
+EAT 500 protein
+MOVE DANCE 120
+QUERY BMR
 QUERY DEFICIT
-EAT 200, LIGHT
+
+
+Run the interpreter:
+python interpreter/interpreter.py examples/sample_day.cal
+
+📈 Plotting Weight Trends
+Generate weight curve graph from JSON log:
+python plot/plot_weight.py
+Saves to output/weight_curve.png
+
+🧠 Future: Natural Language Interface
+The next step is to allow:
+
+“I weigh 52kg today. Ate a chicken salad. Biked 1 hour.”
+to be automatically transformed into:
+
+LOG_WEIGHT 2025-06-25 52.0
+EAT 350 protein
+MOVE BIKE 60
+This will be achieved through LLM-powered input parsing and DSL code generation.
+
+👩‍💻 Author
+Erin Xu
+University of Michigan – ECE Major
+🌱 A project for Ross Impact Studio and Berkeley M.Eng Application
+🔗 GitHub: ErinXU2004
 
 
 

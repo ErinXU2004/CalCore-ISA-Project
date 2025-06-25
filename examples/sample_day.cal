@@ -1,5 +1,0 @@
-set_mode WALKING
-log_calories 30
-set_mode RUNNING
-log_calories 120
-report_bmr

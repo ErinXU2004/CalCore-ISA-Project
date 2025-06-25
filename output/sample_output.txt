@@ -1,2 +1,33 @@
 User Profile: {'Name': 'Erin', 'Age': 21, 'Gender': 'female', 'Height(cm)': 160, 'Weight(kg)': 51, 'Body Fat %': 22, 'BMR(kcal/day)': 1420.23}
 
+EAT: +300 kcal (carb)
+EAT: +150 kcal (protein)
+MOVE: -103.56 kcal (RUNNING 30 min)
+MOVE: -69.04 kcal (WALKING 20 min)
+QUERY: BMR Calculation Requested
+=== BMR Calculation Summary ===
+Model Used: Harris-Benedict Equation (1919, revised)
+Context: Scientific estimate of Basal Metabolic Rate (BMR)
+
+Input:
+  Gender: Male
+  Age: 21 years
+  Height: 160 cm
+  Weight: 51 kg
+
+Formula:
+  BMR = 88.362 + 13.397 × weight + 4.799 × height − 5.677 × age
+
+Calculation:
+  BMR = 88.362 + 13.397×51 + 4.799×160 − 5.677×21
+    = 88.362 + 683.25 + 767.84 - 119.22
+  ≈ 1420.23 kcal/day
+
+Note: This BMR reflects the energy required for survival at complete rest,
+and does not include minor daily activity (e.g., walking, dressing).
+For that, consider RMR ≈ BMR × 1.1
+
+QUERY: Current deficit = +277.40 kcal
+[WEIGHT] 2025-06-22 — 52.1 kg
+[WEIGHT] 2025-06-23 — 51.9 kg
+[WEIGHT] 2025-06-24 — 51.7 kg
