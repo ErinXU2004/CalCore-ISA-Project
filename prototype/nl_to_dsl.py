@@ -24,4 +24,18 @@ def parse_input(text):
         duration = move_match.group(2)
         dsl_lines.append(f"MOVE {move_type} {duration}")
 
-    return
+    return dsl_lines
+
+
+if __name__ == "__main__":
+    text = input("Please enter your dietary, exercise and weight information for today:\n")
+    lines = parse_input(text)
+    for line in lines:
+        print(line)
+        # Save DSL lines into a .cal file
+    filename = f"log_{date.today()}.cal"
+    with open(filename, "w") as f:
+        for line in lines:
+            f.write(line + "\n")
+
+    print(f"\n✅ DSL log saved to: {filename}")
