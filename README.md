@@ -61,7 +61,9 @@ python interpreter/interpreter.py examples/sample_day.cal
 
 📈 Plotting Weight Trends
 Generate weight curve graph from JSON log:
-```python plot/plot_weight.py```
+```
+python plot/plot_weight.py
+```
 Saves to output/weight_curve.png
 
 🧠 Future: Natural Language Interface
@@ -70,9 +72,11 @@ The next step is to allow:
 “I weigh 52kg today. Ate a chicken salad. Biked 1 hour.”
 to be automatically transformed into:
 
-```LOG_WEIGHT 2025-06-25 52.0
+```
+LOG_WEIGHT 2025-06-25 52.0
 EAT 350 protein
-MOVE BIKE 60```
+MOVE BIKE 60
+```
 This will be achieved through LLM-powered input parsing and DSL code generation.
 
 👩‍💻 Author
