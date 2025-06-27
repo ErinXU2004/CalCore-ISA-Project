@@ -1,0 +1,13 @@
+{
+    "steamed bun": { "calories_per_unit": 80, "unit": "piece", "category": "carb" },
+    "noodles": { "calories_per_unit": 400, "unit": "bowl", "category": "carb" },
+    "chicken breast": { "calories_per_unit": 165, "unit": "100g", "category": "protein" },
+    "rice": { "calories_per_unit": 260, "unit": "bowl", "category": "carb" },
+    "apple": { "calories_per_unit": 95, "unit": "piece", "category": "carb" },
+    "egg": { "calories_per_unit": 70, "unit": "piece", "category": "protein" },
+    "milk": { "calories_per_unit": 150, "unit": "cup", "category": "protein" },
+    "hamburger": { "calories_per_unit": 500, "unit": "piece", "category": "fat" },
+    "chocolate": { "calories_per_unit": 200, "unit": "bar", "category": "fat" },
+    "salad": { "calories_per_unit": 150, "unit": "bowl", "category": "fiber" }
+  }
+  

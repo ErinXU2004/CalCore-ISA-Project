@@ -1,0 +1,13 @@
+{
+    "walking": { "calories_per_hour": 200 },
+    "running": { "calories_per_hour": 500 },
+    "biking": { "calories_per_hour": 450 },
+    "swimming": { "calories_per_hour": 550 },
+    "dancing": { "calories_per_hour": 400 },
+    "weight lifting": { "calories_per_hour": 350 },
+    "yoga": { "calories_per_hour": 250 },
+    "brisk walking": { "calories_per_hour": 300 },
+    "badminton": { "calories_per_hour": 400 },
+    "basketball": { "calories_per_hour": 500 }
+  }
+  
